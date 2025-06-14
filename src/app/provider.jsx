@@ -4,7 +4,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { supabase } from '../../services/supabaseClient';
 import { UserDetailContext } from '../../context/Userdetailcontext';
 function Provider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   console.log("user in provider",user)
 
   useEffect(() => {
