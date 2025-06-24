@@ -1,14 +1,20 @@
+'use client'
 import { Phone, Video } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 function CreateOptions(){
     return (
-        <div className='grid grid-cols-2 gap-5'>
-           <div className='bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5'>
+        <div className='grid grid-cols-2 gap-5 '>
+             <Link href={'/dashboard/createinterview'}>
+           <div className='bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 cursor-pointer'>
             <Video  className='p-3 text-primary bg-blue-50 rounded-lg h-10 w-10'/>
+           
                <h2 className='fongt-bold'>Create New Interview</h2>
                <p className='text-gray-500'>Create Ai interview</p>
+             
 
            </div>
+             </Link>
            <div className='bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5'>
             <Phone  className='p-3 text-primary bg-blue-50 rounded-lg h-10 w-10'/>
                <h2 className='fongt-bold'>Create Phone Screening Call</h2>
