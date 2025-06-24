@@ -1,9 +1,10 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import { Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/services/supabaseClient';
+import { supabase } from '../../../../../services/supabaseClient';
 import { useUser } from '@/app/provider';
-import InterviewCard from './InterviewCard';
+
 
 function LatestInterviewsList() {
 
@@ -33,7 +34,7 @@ function LatestInterviewsList() {
       <h2 className={"font-bold text-2xl"}>Interview Records</h2>
 
       {InterviewList?.length == 0 && (
-        <div className={"p-5 flex flex-col gap-3 items-center mt-5"}>
+        <div className={"p-5 flex flex-col gap-3 items-center mt-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"}>
           <Video className={"h-10 w-10 text-primary"} /> 
           <h2>No Interviews Found</h2>
           <Button>+ Create New Interview</Button>
@@ -46,7 +47,7 @@ function LatestInterviewsList() {
             <InterviewCard interview={interview} key={index} />
           ))}
         </div>
-      }
+      } 
 
     </div>
   )
