@@ -18,6 +18,8 @@ function Createinterview() {
       ({...prevData,
         [field]:value})
     );
+
+    console.log("Form Data are....",formData);
   }
     return (
         <div className="mt-10 px-10 md:px-24 lg:px-44 xl:px-56">
