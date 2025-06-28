@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Progress } from "@/components/ui/progress";
 import FormContainer from "./_components/formContainer";
+import QuestionList from "./_components/QuestionsList";
+import { toast } from "sonner";
 
 
 
@@ -21,6 +23,20 @@ function Createinterview() {
 
     console.log("Form Data are....",formData);
   }
+
+  const onGoToNext=()=>{
+   if(!formData.jobPosition||!formData.jobDescription||!formData.Duration||!formData.type){
+    toast("Please enter the fulll deatils...")
+     alert("Now Step");
+     return ;
+    
+   }
+   else{
+setStep(step+1);
+alert("Next Step");
+   }
+   
+  }
     return (
         <div className="mt-10 px-10 md:px-24 lg:px-44 xl:px-56">
           <div className="flex gap-5">
@@ -29,8 +45,8 @@ function Createinterview() {
           </div>
 
           <Progress value={ step* 33} className="my-5"/>
-          <FormContainer onHandleInputChange={onHandleInputChange} /> 
-          
+         {step==1? <FormContainer onHandleInputChange={onHandleInputChange}  GoToNext={()=>onGoToNext()}/> 
+          :step==2?<QuestionList  formData={formData} />:null}
             
             
         </div>
