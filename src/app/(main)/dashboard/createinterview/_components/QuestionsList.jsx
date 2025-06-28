@@ -21,16 +21,20 @@ function QuestionList ({formData}){
     const GenerateAiQuestionList= async()=>{
         setLoading(true);
         try {
-        const result = await axios.post("/api/ai-model",{
-            ...formData
-        })
+            const result = await axios.post("/api/ai-model",{
+                ...formData
+            })
 
-        console.log(result.data);
+            console.log(result.data);
+            setLoading(false);
+        }
+        catch (error) {
+            setLoading(false);
+            toast("Error generating questions",error);
+        }
     }
-    catch (error) {
-        setLoading(false);
-        toast("Error generating questions",error);
-    }
+
+    
    
     return(
         <div>
@@ -46,6 +50,6 @@ function QuestionList ({formData}){
         </div>
     )
 
-}}
+}
 
 export default QuestionList;

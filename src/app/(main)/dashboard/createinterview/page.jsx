@@ -27,13 +27,13 @@ function Createinterview() {
   const onGoToNext=()=>{
    if(!formData.jobPosition||!formData.jobDescription||!formData.Duration||!formData.type){
     toast("Please enter the fulll deatils...")
-     alert("Now Step");
+ 
      return ;
     
    }
    else{
 setStep(step+1);
-alert("Next Step");
+
    }
    
   }
