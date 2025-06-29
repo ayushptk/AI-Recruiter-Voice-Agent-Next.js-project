@@ -6,9 +6,9 @@ import { Copy, Clock, List, Calendar, Mail, ArrowLeft, Plus } from 'lucide-react
 import Link from 'next/link';
 import { toast } from 'sonner';
 
-function InterviewLink({interview_id,formData,interviewId }) {
+function InterviewLink({formData,interview_id }) {
 
-      const url = process.env.NEXT_PUBLIC_HOST_URL + '/' + interviewId;
+      const url = process.env.NEXT_PUBLIC_HOST_URL + '/' +interview_id;
   const GetInterviewUrl = () => {
     return url;
   }
