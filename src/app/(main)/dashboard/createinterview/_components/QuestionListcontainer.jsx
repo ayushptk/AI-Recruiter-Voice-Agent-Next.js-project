@@ -1,0 +1,23 @@
+import React from "react";
+
+function QuestionListContainer({questionList}) {
+    return (
+        <div >
+            <h2 className="font-bold text-lg mb-5">Generated Question</h2>
+                <div className="p-5 border border-gray-300 rounded-xl bg-white ">
+                    
+                    {questionList.map((item,index)=>{
+                        console.log("Rendering question item:", item);
+                        return (
+                            <div key={index} className="p-3 border border-gray-200 display">
+                                <h2 className="font-bold">{item.question}</h2>
+                                <h2 className="text-primary">Type:{item.type}</h2>
+                            </div>
+                        );
+                    })}
+                </div>
+           
+        </div>
+    );
+}
+export default QuestionListContainer;
