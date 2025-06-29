@@ -33,6 +33,7 @@ export async function POST(req) {
           "content": Final_PROMPT
         }
       ],
+     
     });
 
     console.log(completion.choices[0].message);
