@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState, useContext } from 'react';
 import { supabase } from '../../services/supabaseClient';
 import { UserDetailContext } from '../../context/Userdetailcontext';
+
 function Provider({ children }) {
-  const [user, setUser] = useState();
-  console.log("user in provider",user)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const init = async () => {
