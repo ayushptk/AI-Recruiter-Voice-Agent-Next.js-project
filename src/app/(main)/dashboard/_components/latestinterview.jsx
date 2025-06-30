@@ -10,6 +10,7 @@ import InterviewCard from './Interviewcard';
 function LatestInterviewsList() {
 
     const [ InterviewList, setInterviewList ] = useState([]);
+    console.log("Interview List are...",InterviewList);
     const {user} = useUser();
 
     console.log("user are  in interviewss",user);
@@ -44,7 +45,7 @@ function LatestInterviewsList() {
       )}
 
       {InterviewList && 
-        <div className={"grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 mt-5"}>
+        <div className={"grid grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-5"}>
           {InterviewList.map((interview, index) => (
             <InterviewCard interview={interview} key={index} />
           ))}
