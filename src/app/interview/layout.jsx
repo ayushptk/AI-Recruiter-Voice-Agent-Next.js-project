@@ -5,9 +5,9 @@ import { InterviewDataContext } from "../../../context/interviewDatacontext";
 
 function InterviewLayout({children}){
 
-    const [interviewInfo,SetInterviewInfo] = useState();
+    const [interviewInfo,setInterviewInfo] = useState();
     return(
-        <InterviewDataContext.Provider value={{interviewInfo,SetInterviewInfo}}> 
+        <InterviewDataContext.Provider value={{interviewInfo,setInterviewInfo}}> 
         <div>
             <InterviewHeader />
            {children}

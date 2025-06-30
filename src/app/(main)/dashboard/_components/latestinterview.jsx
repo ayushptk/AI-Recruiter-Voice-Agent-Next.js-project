@@ -4,6 +4,7 @@ import { Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '../../../../../services/supabaseClient';
 import { useUser } from '@/app/provider';
+import InterviewCard from './Interviewcard';
 
 
 function LatestInterviewsList() {
@@ -11,19 +12,20 @@ function LatestInterviewsList() {
     const [ InterviewList, setInterviewList ] = useState([]);
     const {user} = useUser();
 
+    console.log("user are  in interviewss",user);
     useEffect(() => {
       user && GetInterviewList();
     }, [user])
 
     const GetInterviewList = async () => {
        let { data: Interviews, error } = await supabase
-          .from('Interviews')
+          .from('interviews')
           .select('*') 
           .eq('userEmail', user?.email)
           .order('id', { ascending: false })
           .limit(6)
 
-          console.log(Interviews);
+          console.log( "Interviews are...",Interviews);
           setInterviewList(Interviews);
 
     }

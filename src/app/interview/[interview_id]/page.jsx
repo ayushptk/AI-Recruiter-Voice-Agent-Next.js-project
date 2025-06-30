@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { useParams } from 'next/navigation';
 
 import { toast } from 'sonner';
+// import { InterviewDataContext } from '../../../../context/interviewDatacontext';
 import { InterviewDataContext } from '../../../../context/interviewDatacontext';
 import { useRouter } from 'next/navigation';
 
@@ -32,8 +33,8 @@ function Interview() {
   const [timeLeft, setTimeLeft] = useState(null);
 
 
-  const {interviewInfo, setInterviewInfo} = useContext(InterviewDataContext);
-
+  // const {interviewInfo, setInterviewInfo} = useContext(InterviewDataContext);
+const {interviewInfo,setInterviewInfo} = useContext(InterviewDataContext);
   const router = useRouter(); 
 
   const GetInterviewDetails = async () => {
