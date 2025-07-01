@@ -44,7 +44,7 @@ function InterviewCard({ interview, viewDetail=false }) {
         <Button className={"flex-1"} onClick={() => onSend()}><Send /> Send Invite</Button>
        </div>
        : 
-       <Link href={'/scheduled-interview/' + interview?.interview_id + '/details'}>
+       <Link href={'/schedule-interview/' + interview?.interview_id + '/details'}>
         <Button className={"mt-5 w-full"} variant={'outline'}>View Detail <ArrowRight /></Button>
        </Link>
        }

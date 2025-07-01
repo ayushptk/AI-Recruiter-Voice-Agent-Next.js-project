@@ -1,9 +1,9 @@
  "use client";
 import React, { useEffect, useState} from 'react';
 import { useParams } from 'next/navigation';
-import { supabase } from '@/services/supabaseClient';
+import { supabase } from '../../../../../../services/supabaseClient';
 import { useUser } from '@/app/provider';
-import InterviewDetailContainer from '../_components/InterviewDetailContainer';
+import InterviewDetailContainer from '../_components/interviewdetailsContainer';
 import CandidateList from '../_components/CandidateList';
 
 
@@ -19,13 +19,13 @@ function InterviewDetail() {
 
     const GetInterviewDetail = async () => {
         const {data, error} = await supabase
-            .from('Interviews')
-            .select(`jobPosition, jobDescription, type, questionList, Duration, interview_id, created_at, interview-feedback(userEmail, userName, feedback, created_at)`)
+            .from('interviews')
+            .select(`jobPosition, jobDescription, type, questionlist, Duration, interview_id, created_at, interview-feedback(userEmail, userName, feedback, created_at)`)
             .eq('userEmail', user?.email)
             .eq('interview_id', interview_id)
 
             setInterviewDetail(data[0]);
-            console.log(data);
+            console.log( "The data aree......",data);
      }
 
   return (

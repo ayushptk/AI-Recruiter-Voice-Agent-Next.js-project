@@ -12,7 +12,7 @@ function InterviewDetailContainer({ interviewDetail }) {
       <div className={"mt-4 flex justify-between items-center lg:pr-25"}>
         <div>
             <h2 className={"text-xs text-gray-600"}>Duration</h2>
-            <h2 className={"text-sm font-bold flex items-center gap-2 mt-2"}><Clock className={"h-4 w-4"} /> {interviewDetail?.duration}</h2>
+            <h2 className={"text-sm font-bold flex items-center gap-2 mt-2"}><Clock className={"h-4 w-4"} /> {interviewDetail?.Duration}</h2>
         </div>
 
         <div>
@@ -37,8 +37,8 @@ function InterviewDetailContainer({ interviewDetail }) {
         <h2 className={"font-bold"}>Interview Questions</h2>
 
         <div className={"grid grid-cols-2 gap-3 mt-3"}>
-            {Array.isArray(interviewDetail?.questionList) && interviewDetail.questionList.length > 0 ? (
-              interviewDetail.questionList.map((item, index) => (
+            {Array.isArray(interviewDetail?.questionlist) && interviewDetail.questionlist.length > 0 ? (
+              interviewDetail.questionlist.map((item, index) => (
                <h2 key={index} className="text-xs flex">
                   <MessageCircleCodeIcon className="h-6 w-6 pr-1 text-green-400" /> {item?.question}
                </h2>
