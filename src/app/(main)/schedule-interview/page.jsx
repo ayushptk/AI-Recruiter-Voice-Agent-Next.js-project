@@ -13,14 +13,18 @@ function ScheduledInterview() {
     const {user} = useUser();
     const [InterviewList, setInterviewList] = useState([]);
 
+    console.log("user are  in interviewss", user);
+
+    console.log("Interview List are...", InterviewList);
+
     useEffect(() => {
         user && GetInterviewList();
     }, [user])
 
     const GetInterviewList = async () => {
         const {data, error} = await supabase
-          .from('Interviews')
-          .select(`jobPosition, duration, interview_id, interview-feedback(userEmail)`)
+          .from('interviews')
+          .select(`jobPosition, Duration, interview_id, interview-feedback(userEmail)`)
           .eq('userEmail', user?.email)
           //.eq('"interview-feedback".userEmail', user?.email)
           .order('id', { ascending: false })
@@ -32,6 +36,8 @@ function ScheduledInterview() {
            setInterviewList(data); 
         }
     }
+
+
 
 
   return (
@@ -47,7 +53,7 @@ function ScheduledInterview() {
             )}
       
             {InterviewList && 
-              <div className={"grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 mt-5"}>
+              <div className={"grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-5"}>
                 {InterviewList?.map((interview, index) => (
                   <InterviewCard interview={interview} key={index} 
                   viewDetail={true}

@@ -8,6 +8,8 @@ import Link from 'next/link';
 
 function InterviewCard({ interview, viewDetail=false }) {
 
+  console.log("Interview Card are ..",interview);
+
   const url = process.env.NEXT_PUBLIC_HOST_URL + '/' + interview?.interview_id; 
 
    const copyLink = () => {
@@ -19,6 +21,8 @@ function InterviewCard({ interview, viewDetail=false }) {
       window.location.href = 'mailto:' + interview?.userEmail + '?subject=' + interview?.jobPosition + '&body=' + interview?.jobDescription;
     }
 
+    console.log("Interview duration are ..",interview.Duration);
+
 
   return (
     <div className={"p-5 bg-white rounded-lg border"}>
@@ -28,8 +32,10 @@ function InterviewCard({ interview, viewDetail=false }) {
        </div>
 
        <h2 className={"text-black font-bold mt-3 text-lg"}>{interview?.jobPosition}</h2>
-       <h2 className={"mt-2 flex justify-between text-gray-500"}>{interview?.duration}
-        <span className={"text-green-700"}>{interview['interview-feedback']?.length} User</span>
+       <h2 className={"mt-2 flex justify-between text-gray-500"}>{interview.Duration}
+
+        
+        
        </h2>
 
        {!viewDetail? 

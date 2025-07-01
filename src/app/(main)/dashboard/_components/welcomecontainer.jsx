@@ -25,7 +25,7 @@ function WelcomeContainer () {
                     <h2 className={"text-medium font-bold"}>Welcome Back, {user?.name || 'Guest'}</h2>
                     <h2 className={"text-gray-500 text-sm"}>AI-Driven Interviews, Simplified, Hustle-Free Hiring</h2>
                 </div>
-                {/* {user?.picture && <Image className="rounded-full" src={user.picture} width={40} height={40} alt={'Welcome Image'} />} */}
+                {user?.picture && <Image className="rounded-full" src={user.picture} width={40} height={40} alt={'Welcome Image'} />}
             </div>
         </div>
     )
