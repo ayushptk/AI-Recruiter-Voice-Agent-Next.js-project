@@ -10,7 +10,7 @@ function DashboardProvider({ children }) {
         <SidebarProvider>
            <AppSidebar />
         <div className="w-full pl-10">
-                  <WelcomeContainer />
+// WelcomeContainer removed
             {/* <SidebarTrigger /> */}
             {children}
         </div>

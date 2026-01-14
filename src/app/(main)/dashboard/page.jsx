@@ -5,17 +5,17 @@ import LatestInterviewsList from "./_components/latestinterview";
 
 function Dashboard() {
     return (
-        
-            <div>
-     
+        <div className="p-6 md:p-10 min-h-screen">
+           <WelcomeContainer />
            
-           <h1 className="text-2xl font-bold  ">Dashboard</h1>
-           <CreateOptions />
-           <LatestInterviewsList />  
+           <div className="mt-10">
+             <CreateOptions />
            </div>
            
-        
-        
+           <div className="mt-10">
+             <LatestInterviewsList />
+           </div>
+        </div>
     )
 }
 

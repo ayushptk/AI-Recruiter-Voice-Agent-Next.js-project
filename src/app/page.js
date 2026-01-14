@@ -103,12 +103,12 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="/signin">
+          <Link href="/auth">
             <Button variant="ghost" className="text-gray-300 hover:text-white hidden sm:flex hover:bg-white/10 cursor-pointer">
               Sign In
             </Button>
           </Link>
-          <Link href="/signup">
+          <Link href="/auth">
             <Button className="bg-white text-black hover:bg-gray-200 transition-all rounded-full px-6 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] cursor-pointer">
               Get Started
             </Button>
@@ -670,7 +670,7 @@ export default function Home() {
                 <p className="text-xl text-gray-400 mb-10">
                   Join 500+ companies using AI to build world-class teams.
                 </p>
-                <Link href="/signup">
+                <Link href="/auth">
                   <Button className="h-14 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-100 hover:scale-105 transition-transform duration-200 cursor-pointer">
                     Start Your Free Trial
                   </Button>
