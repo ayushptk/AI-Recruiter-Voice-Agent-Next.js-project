@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { 
   Bot, Brain, Sparkles, Rocket, ArrowRight, CheckCircle, Globe, Zap, Users, Shield, 
-  Check, Plus, Minus, ChevronDown, Star, Twitter, Linkedin, Github, Facebook, Instagram 
+  Check, Plus, Minus, ChevronDown, Star, Twitter, Linkedin, Github, Facebook, Instagram,
+  Code, MessageSquare, FileText, Search, Layout, Terminal 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -190,88 +191,119 @@ const Hero = () => {
 
         <motion.div 
           style={{ y: y2 }}
-          className="relative lg:h-[600px] hidden lg:block"
+          className="relative lg:h-[650px] hidden lg:block w-full"
         >
-          {/* Dashboard Mockup 3D Effect */}
-          <motion.div 
-            className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-black/90 border border-white/10 rounded-2xl shadow-2xl p-6 overflow-hidden backdrop-blur-xl"
-            initial={{ rotateY: 15, rotateX: 5, opacity: 0 }}
-            animate={{ rotateY: -10, rotateX: 5, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-            style={{ perspective: 1000 }}
-          >
-             {/* Simple UI Mockup */}
-             <div className="flex items-center justify-between mb-8 border-b border-gray-800 pb-4">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                </div>
-                <div className="text-xs text-gray-500 font-mono">AI Match Score Analysis</div>
-             </div>
-             
-             <div className="space-y-4">
-               {[
-                 { name: "Sarah Chen", role: "Sr. Frontend Dev", score: 98, color: "text-green-400", img: "/avatars/user2.jpg" },
-                 { name: "Michael Ross", role: "Product Designer", score: 92, color: "text-green-400", img: "/avatars/user3.jpg" },
-                 { name: "David Kim", role: "Backend Engineer", score: 85, color: "text-yellow-400", img: "/avatars/user5.jpg" },
-               ].map((candidate, i) => (
-                 <motion.div 
-                  key={i}
-                  initial={{ x: 50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 1.5 + (i * 0.2) }}
-                  className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer group"
-                 >
-                   <div className="flex items-center gap-4">
-                     <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden relative border border-white/10 group-hover:border-blue-500/50 transition-colors">
-                       <Image 
-                         src={candidate.img}
-                         alt={candidate.name}
-                         fill
-                         className="object-cover"
-                       />
-                     </div>
-                     <div>
-                       <div className="font-medium text-white group-hover:text-blue-400 transition-colors">{candidate.name}</div>
-                       <div className="text-xs text-gray-500">{candidate.role}</div>
-                     </div>
-                   </div>
-                   <div className={`font-bold ${candidate.color} bg-white/5 px-3 py-1 rounded-full text-sm`}>{candidate.score}%</div>
-                 </motion.div>
-               ))}
+          {/* Central Blue Aura/Blob */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[80px]"
+            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          />
 
-               <motion.div
-                 className="mt-8 p-4 rounded-xl bg-blue-500/10 border border-blue-500/30 backdrop-blur-md"
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 transition={{ delay: 2.5 }}
-               >
-                 <div className="flex gap-3">
-                   <Bot className="text-blue-400 shrink-0" />
-                   <p className="text-sm text-blue-100">
-                     Based on the technical assessment, <span className="font-semibold text-white">Sarah</span> shows exceptional proficiency in React and System Design. Recommended for interview.
-                   </p>
-                 </div>
-               </motion.div>
+          {/* Main Character Image */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] z-10">
+             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm group">
+                <Image
+                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                   alt="AI Recruiter Agent"
+                   fill
+                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+             </div>
+          </div>
+
+   
+
+          {/* Floating Card 2: AI Engagement (Bottom Left) */}
+          <motion.div
+            className="absolute bottom-[20%] left-[0%] z-30 bg-white text-black p-3 rounded-2xl rounded-bl-none shadow-[0_0_30px_rgba(0,0,0,0.3)] w-48 transform hover:scale-105 transition-transform duration-300"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1, y: [0, 10, 0] }}
+            transition={{ 
+                duration: 0.8, 
+                delay: 0.7,
+                y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            }}
+          >
+             <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shrink-0 shadow-lg">
+                    <Sparkles size={14} className="text-white" />
+                </div>
+                <div>
+                   <p className="text-xs font-medium leading-relaxed">Here is your analysis.</p>
+                   <div className="mt-1 text-[10px] text-gray-400 font-medium">AI Agent • Now</div>
+                </div>
              </div>
           </motion.div>
-          
-          {/* Floating card */}
+
+          {/* Floating Card 3: AI Coding Help (Top Right) */}
           <motion.div
-            className="absolute -bottom-10 -left-10 bg-gray-900/90 border border-white/10 p-4 rounded-xl shadow-xl z-20 backdrop-blur-md"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[15%] right-[-5%] z-20 bg-[#1e1e1e] border border-white/10 p-4 rounded-xl shadow-2xl w-64 font-mono"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1, y: [0, 12, 0] }}
+            transition={{ 
+                duration: 0.8, 
+                delay: 0.9,
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+            }}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                <CheckCircle size={20} className="text-green-500" />
+              <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+                 <div className="flex gap-1.5">
+                     <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                     <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                 </div>
+                 <div className="flex items-center gap-1.5 text-[10px] text-blue-400">
+                    <Code size={10} />
+                    <span>AI Help</span>
+                 </div>
               </div>
-              <div>
-                <div className="text-sm font-medium text-white">Interview Scheduled</div>
-                <div className="text-xs text-gray-500">Tomorrow, 10:00 AM</div>
+              <div className="text-[10px] text-gray-400 space-y-1 leading-relaxed">
+                  <p><span className="text-purple-400">const</span> <span className="text-blue-400">opt</span> = (<span className="text-orange-400">v</span>) ={">"} &#123;</p>
+                  <p className="pl-3"><span className="text-gray-500">// AI analyzing...</span></p>
+                  <p className="pl-3"><span className="text-purple-400">return</span> v.<span className="text-yellow-400">reduce</span>((a,b)={">"}a+b);</p>
+                  <p>&#125;</p>
               </div>
-            </div>
+          </motion.div>
+
+          {/* Floating Card 4: AI Skill Evaluation (Bottom Right) */}
+          <motion.div
+              className="absolute bottom-[10%] right-[-6%] z-20 bg-white p-4 rounded-xl shadow-xl w-56"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, y: [0, -8, 0] }}
+              transition={{ 
+                  duration: 0.8, 
+                  delay: 1.1,
+                  y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }
+              }}
+          >
+             <div className="flex items-center justify-between mb-3">
+                 <div className="flex items-center gap-2">
+                     <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
+                         <Brain size={16} className="text-blue-600" />
+                     </div>
+                     <span className="text-xs font-bold text-gray-900">AI Eval</span>
+                 </div>
+                 <span className="text-[10px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">Report</span>
+             </div>
+             <div className="space-y-2">
+                 {[
+                     { label: "Logic", val: 5 },
+                     { label: "Code", val: 4 },
+                     { label: "System", val: 4 },
+                 ].map((skill, i) => (
+                     <div key={i} className="flex items-center justify-between">
+                         <span className="text-[10px] font-medium text-gray-600">{skill.label}</span>
+                         <div className="flex gap-1">
+                             {[1,2,3,4,5].map(v => (
+                                 <div key={v} className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${v <= skill.val ? 'bg-green-500' : 'bg-gray-200'}`} />
+                             ))}
+                         </div>
+                     </div>
+                 ))}
+             </div>
           </motion.div>
         </motion.div>
       </div>
