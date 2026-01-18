@@ -1,33 +1,37 @@
 import { Calendar, LayoutDashboard, List, Settings, WalletCards } from "lucide-react";
 import { Code2Icon , User2Icon, BriefcaseBusinessIcon, Puzzle, ShieldCheck} from 'lucide-react';
-
+import { MdDashboard } from "react-icons/md";
+import { RiCalendarScheduleFill } from "react-icons/ri";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { FaMoneyCheck } from "react-icons/fa6";
+import { RiSettingsFill } from "react-icons/ri";
 
 export const SideBaroptions=[
     {
         name:'Dashboards',
-        icon:LayoutDashboard,
+        icon:MdDashboard,
         path:'/dashboard' 
     },
     {
         name:'Schedule Interview',
-        icon:Calendar,
+        icon:RiCalendarScheduleFill,
         path:'/schedule-interview'
         },
 
         {
             name:'All Interviews',
-            icon:List,
+            icon:MdOutlineSupportAgent,
             path:'/all-interview'
             },
 
             {
                 name:'Billing',
-                icon:WalletCards,
+                icon:FaMoneyCheck,
                 path:'/billing'
             },
             {
                 name:'Settings',
-                icon:Settings,
+                icon:RiSettingsFill,
                 path:'/settings'
             }
 
