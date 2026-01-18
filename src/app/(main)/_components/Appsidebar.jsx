@@ -56,10 +56,9 @@ console.log("path",path)
                     asChild 
                     className={`
                       group relative px-4 py-6 rounded-xl transition-all duration-300 ease-in-out
-                      hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50
                       ${path === options.path 
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-200' 
-                        : 'hover:shadow-md'
+                        : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:shadow-md'
                       }
                     `}
                   > 
@@ -73,13 +72,13 @@ console.log("path",path)
                             w-6 h-6 
                             ${path === options.path 
                               ? 'text-white' 
-                              : 'text-gray-600 group-hover:text-blue-600'
+                              : 'text-gray-600'
                             }
                           `}
                         />
                       </div>
                       <span className={`
-                        text-[17px] font-bold tracking-tight
+                        text-[15px] font-semibold tracking-tight
                         ${path === options.path 
                           ? 'text-white' 
                           : 'text-gray-700 group-hover:text-gray-900'
@@ -87,11 +86,7 @@ console.log("path",path)
                       `}>
                         {options.name}
                       </span>
-                      
-                      {/* Active indicator */}
-                      {path === options.path && (
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-l-full" />
-                      )}
+
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
